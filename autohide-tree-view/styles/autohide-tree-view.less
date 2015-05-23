@@ -1,0 +1,24 @@
+.tree-view-resizer.autohide {
+  min-width: 1px!important; // allow the tree view to hide (almost) completely
+  z-index: 10; // above the text-editor scrollbar
+
+  &[data-show-on-right-side="true"] {
+    right: 0; // without this the tree view will slide off-screen
+  }
+
+  .tree-view-scroller, .tree-view {
+    position: absolute; // keeps them in the right place
+  }
+
+  .tree-view-scroller {
+    overflow-x: hidden; // because the item highlighting causes overflow-x
+  }
+
+  .tree-view-resize-handle {
+    display: none; // we handle resizing!
+  }
+
+  .entry::before {
+    min-width: 1000px;
+  }
+}
